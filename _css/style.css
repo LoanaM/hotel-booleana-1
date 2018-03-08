@@ -2,5 +2,86 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'PT Mono', monospace;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.padding{
+  padding: 2%;
+}
+
+
+.text-center{
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #ECFAFB;
+}
+
+a:hover {
+  color: #00204a;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/*******GRID SYS LAYOUT*******/
+
+.container{
+  display: grid;
+  grid-template-areas: "h h h h h"
+                       "i i i i i"
+                       "n n n n n"
+                       "m m m m m"
+                       "f f f f f";
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20% ;
+}
+
+.item1{
+  grid-area: h;
+  text-align: center;
+  font-size: 2em;
+  text-shadow: 1px 1px;
+}
+
+.image{
+  grid-area: i;
+}
+
+nav{
+  grid-area: n;
+  background: #4AA6B5;
+  color: #ECFAFB;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer{
+  grid-area: f;
+  background: #4AA6B5;
+  color: #ECFAFB;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.item3{
+  grid-area: f;
+  background: red;
+}
+/*************STYLESHEET BEGIN***********/
+#blinker{
+  animation: blinker 1s linear infinite;
+  color: #2966D6;
+}
+@keyframes blinker {
+  60% { opacity: 0; }
+}
+
+
+nav span{
 }

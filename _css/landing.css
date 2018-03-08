@@ -11,9 +11,9 @@ a{
 
 
 html{
-  background: url('../_img/background.jpg') no-repeat center center fixed;
+  background: url('../_img/background.jpeg') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'PT Mono', monospace;
+  font-family: 'Julius Sans One', sans-serif;
   font-weight: 900;
   font-size: 5em;
   color: #FAFBFC;
@@ -30,12 +30,6 @@ body{
   left: 5%;
   top:50%;
   text-shadow: 1px 1px;
-}
-
-.initials{
-  color: #2966D6;
-  border: 4px solid #2966D6;
-
 }
 
 span{
