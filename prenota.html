@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="_css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <title>Hotel Booleana | Home</title>
+  </head>
+  <body>
+      <div class="image">
+        <div class="lang">
+          <select class="" name="lang" selected="default">
+            <option value="default">ITALIANO</option>
+            <option value="INGLESE">INGLESE</option>
+            <option value="FRANCESE">FRANCESE</option>
+            <option value="TEDESCO">TEDESCO</option>
+            <option value="SPAGNOLO">SPAGNOLO</option>
+            <option value="RUSSO">RUSSO</option>
+          </select>
+        </div>  
+        <span class="title-banner padding">&gt;<span id="blinker">_</span>Hotel Booleana &#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <nav>
+          <span><a href="home.html">HOME</a></span>
+          <span><a href="gallery.html">GALLERY</a></span>
+          <span><a href="ristorante.html">RISTORANTE</a></span>
+          <span><a href="prenota.html">PRENOTA</a></span>
+          <span><a href="prezzi.html">PREZZI</a></span>
+          <span><a href="offerte.html">OFFERTE</a></span>
+          <span><a href="contatti.html">CONTATTI</a></span>
+        </nav>
+      </div>
+      <main class="container">
+        <h1 class="col-12-xs">PRENOTA</h1>
+        <div class="col-12-xs">
+          <h2>Compila il form sottostante per prenotare</h2>
+
+          <form class="margin" action="prenota.html" method="post">
+            <span class="margin-top">Cognome:</span>
+            <input type="text" name="cognome" placeholder="Cognome" required>
+            <span>Pensione:</span>
+            <select class="" name="tipo_pensione" selected="default" required>
+              <option value="default">Seleziona un campo</option>
+              <option value="mezza_pensione">Mezza Pensione</option>
+              <option value="completa_pensione">Pensione Completa</option>
+            </select>
+            <span>Adulti:</span>
+            <select class="" name="adulti" selected="default" required>
+              <option value="default">Seleziona un campo</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <span>Bambini:</span>
+            <select class="" name="bambini" selected="default" required>
+              <option value="default">Seleziona un campo</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <span>Giorno di arrivo</span>
+            <input type="date" name="arrivo_giorno" required>
+            <span>Giorno di partenza</span>
+            <input type="date" name="partenza_giorno" required>
+            <input type="text" name="note" value="" placeholder="Se desiderate comunicare qualcosa in merito alla vostra prenotazione, potete scriverlo qui">
+            <input class="margin" type="submit" name="submit" value="Invia Dati">
+          </form>
+          <div class="col-12-xs">
+            <figure>
+              <img src="_img/adv.jpeg" alt="banner pub">
+            </figure>
+          </div>
+        </div>
+
+      </main>
+      <footer>
+        <div id="contact">
+          <h3>Hotel Booleana</h3>
+          <p>Via XXX, Svervegia, Oatmeal Island</p>
+          <p>Telefono: xxx xxx xxxx</p>
+        </div>
+        <div id="icons">
+          <span class="fab fa-facebook-square"><a href="#"></a></span>
+          <span class="fab fa-tripadvisor"><a href="#"></a></span>
+          <span class="fas fa-envelope-square"><a href="#"></a></span>
+        </div>
+      </footer>
+  </body>
+</html>
