@@ -10,7 +10,7 @@ a{
 }
 
 
-html{
+body{
   background: url('../_img/background.jpeg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Julius Sans One', sans-serif;
@@ -19,7 +19,7 @@ html{
   color: #FAFBFC;
 }
 
-body{
+.image{
   background: rgba(0,0,0,0.5);
   height: 100vh;
 }
