@@ -1,3 +1,15 @@
+/* ********** margin gallery image fix ********** */
+
+ /* - Ho aggiunto una classe clearfix al tag container + Correzzione del clearfix nel css (era assegnato a tutti gli elementi con *::after{ ... } )
+    - aggiunta di un div che fa da contenente  ad ongi blocco "gallery". A tale div ho assegnato la classe col-12-xs
+    - Ho assegnato position: relative alla prima immagine perchè lei è già nella giusta posizione. In questo modo il div contenitore mantiene la sua dimensione e non sfancula
+    - Immagini second e third posizionate come avevi fatto te con absolute, ma ho aggiunto top: O;
+    - Ho aggiunto la classe margin-bot che insieme alla tua margin-top distanziano ogni blocco gallery dall'altro
+    - Infine ho aggiunto la classe separator che assegna un bordro inferiore ai div contenitori delle singole strutture gallery
+
+
+/* ********************************************* */
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -25,6 +37,16 @@ img{
 
 .margin-top{
   margin-top: 5%;
+  padding-top: 0;
+}
+
+.margin-bot{
+  margin-bottom: 1%;
+  padding-bottom: 5%;
+}
+
+.separator {
+   border-bottom: 1px solid #D6C481;
 }
 
 a{
@@ -39,11 +61,12 @@ a:hover{
 h1{
   background-color: #D6C481;
   margin: 2% auto;
+  padding: 2%;
 }
 
-h2{
+/* h2{
   border-top: 1px solid #D6C481;
-}
+} */
 
 .title-banner{
   font-size: 2rem;
@@ -78,9 +101,21 @@ nav{
     grid-row-start: 1;
     flex-direction: column;
   }
+
+  .margin-top{
+    margin-top: 5%;
+    padding-top: 5%;
+  }
+
+  .margin-bot{
+    margin-bottom: 3%;
+    padding-bottom: 10%;
+  }
+
 }
+
 /**TRANSITIONS AND ANIMATIONS***/
-#blinker{
+ #blinker{
   animation: blinker 1s linear infinite;
   color: #2966D6;
 }
@@ -185,7 +220,6 @@ animation-direction: alternate;
   grid-template-rows: 20% 20% 20% 20% 10% 10%;
 }
 
-
 main{
   text-align: center;
 }
@@ -231,13 +265,20 @@ ul li span{
 
 .slides-ctn {
   position:relative;
-  height: 300px;
+  /* height: 300px; */
   margin:5% auto;
 }
 
-.slides-ctn img {
-  max-height: 100%;
+.slides-ctn .first{
+   margin: 0 auto;
+   position: relative;
+   transition: opacity 1s ease-in-out;
+}
+
+.slides-ctn img:not(:first-child){
+  margin: 0 auto;
   position:absolute;
+  top: 0;
   left: 50%;
   transform: translatex(-50%);
   transition: opacity 1s ease-in-out;
@@ -283,4 +324,6 @@ footer{
   cursor: pointer;
 }
 
-  /*************beginning of col layout***/ [class^="col-"]{ float: left; padding: 2%; } .container { width: 1170px; padding: 2%; margin: 2% auto; } *::after{ content: ""; display: table; clear: both; } @media (min-width: 340px) { .container{ width: 340px; } .col-1-xs{ width: calc((100% / 12) * 1); } .col-2-xs{ width: calc((100% / 12) * 2); } .col-3-xs{ width: calc((100% / 12) * 3); } .col-4-xs{ width: calc((100% / 12) * 4); } .col-5-xs{ width: calc((100% / 12) * 5); } .col-6-xs{ width: calc((100% / 12) * 6); } .col-7-xs{ width: calc((100% / 12) * 7); } .col-8-xs{ width: calc((100% / 12) * 8); } .col-9-xs{ width: calc((100% / 12) * 9); } .col-10-xs{ width: calc((100% / 12) * 10); } .col-11-xs{ width: calc((100% / 12) * 11); } .col-12-xs{ width: calc((100% / 12) * 12); } } @media (min-width: 730px) { .container{ width: 730px; } .col-1-md{ width: calc((100% / 12) * 1); } .col-2-md{ width: calc((100% / 12) * 2); } .col-3-md{ width: calc((100% / 12) * 3); } .col-4-md{ width: calc((100% / 12) * 4); } .col-5-md{ width: calc((100% / 12) * 5); } .col-6-md{ width: calc((100% / 12) * 6); } .col-7-md{ width: calc((100% / 12) * 7); } .col-8-md{ width: calc((100% / 12) * 8); } .col-9-md{ width: calc((100% / 12) * 9); } .col-10-md{ width: calc((100% / 12) * 10); } .col-11-md{ width: calc((100% / 12) * 11); } .col-12-md{ width: calc((100% / 12) * 12); } } @media (min-width: 1170px) { .container{ width: 1170px; } .col-1-lg{ width: calc((100% / 12) * 1); } .col-2-lg{ width: calc((100% / 12) * 2); } .col-3-lg{ width: calc((100% / 12) * 3); } .col-4-lg{ width: calc((100% / 12) * 4); } .col-5-lg{ width: calc((100% / 12) * 5); } .col-6-lg{ width: calc((100% / 12) * 6); } .col-7-lg{ width: calc((100% / 12) * 7); } .col-8-lg{ width: calc((100% / 12) * 8); } .col-9-lg{ width: calc((100% / 12) * 9); } .col-10-lg{ width: calc((100% / 12) * 10); } .col-11-lg{ width: calc((100% / 12) * 11); } .col-12-lg{ width: calc((100% / 12) * 12); } }
+  /*************beginning of col layout***/ [class^="col-"]{ float: left; /*padding: 2%;*/ } .container { width: 1170px; padding: 2%; margin: 2% auto; }
+  /** ----> IL CLEARFIX ASSEGNATO A TUTTI GLI ELEMENTI TI SFANCULAVA TUTTO :D *::after{ content: ""; display: table; clear: both; <----- } */.clearfix::after{ content: ""; display: table; clear: both; }
+  @media (min-width: 340px) { .container{ width: 340px; } .col-1-xs{ width: calc((100% / 12) * 1); } .col-2-xs{ width: calc((100% / 12) * 2); } .col-3-xs{ width: calc((100% / 12) * 3); } .col-4-xs{ width: calc((100% / 12) * 4); } .col-5-xs{ width: calc((100% / 12) * 5); } .col-6-xs{ width: calc((100% / 12) * 6); } .col-7-xs{ width: calc((100% / 12) * 7); } .col-8-xs{ width: calc((100% / 12) * 8); } .col-9-xs{ width: calc((100% / 12) * 9); } .col-10-xs{ width: calc((100% / 12) * 10); } .col-11-xs{ width: calc((100% / 12) * 11); } .col-12-xs{ width: calc((100% / 12) * 12); } } @media (min-width: 730px) { .container{ width: 730px; } .col-1-md{ width: calc((100% / 12) * 1); } .col-2-md{ width: calc((100% / 12) * 2); } .col-3-md{ width: calc((100% / 12) * 3); } .col-4-md{ width: calc((100% / 12) * 4); } .col-5-md{ width: calc((100% / 12) * 5); } .col-6-md{ width: calc((100% / 12) * 6); } .col-7-md{ width: calc((100% / 12) * 7); } .col-8-md{ width: calc((100% / 12) * 8); } .col-9-md{ width: calc((100% / 12) * 9); } .col-10-md{ width: calc((100% / 12) * 10); } .col-11-md{ width: calc((100% / 12) * 11); } .col-12-md{ width: calc((100% / 12) * 12); } } @media (min-width: 1170px) { .container{ width: 1170px; } .col-1-lg{ width: calc((100% / 12) * 1); } .col-2-lg{ width: calc((100% / 12) * 2); } .col-3-lg{ width: calc((100% / 12) * 3); } .col-4-lg{ width: calc((100% / 12) * 4); } .col-5-lg{ width: calc((100% / 12) * 5); } .col-6-lg{ width: calc((100% / 12) * 6); } .col-7-lg{ width: calc((100% / 12) * 7); } .col-8-lg{ width: calc((100% / 12) * 8); } .col-9-lg{ width: calc((100% / 12) * 9); } .col-10-lg{ width: calc((100% / 12) * 10); } .col-11-lg{ width: calc((100% / 12) * 11); } .col-12-lg{ width: calc((100% / 12) * 12); } }
